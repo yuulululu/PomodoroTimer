@@ -1,0 +1,144 @@
+:root {
+  --bg: #fde8ee;          /* พื้นหลังชมพูนม */
+  --body: #ffc9d9;        /* ตัวเครื่อง */
+  --body-edge: #f7a8c0;   /* ขอบ/เงาเข้ม */
+  --screen: #fff4f7;      /* จอ LCD */
+  --ink: #8a3a56;         /* ตัวอักษรชมพูเข้ม */
+  --accent: #ff8fb1;      /* ปุ่มหลัก/แถบความคืบหน้า */
+  --white: #ffffff;
+}
+
+* { box-sizing: border-box; margin: 0; }
+
+html, body { height: 100%; }
+
+body {
+  font-family: "Mali", system-ui, sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+}
+
+.stage {
+  min-height: 100%;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+/* ตัวเครื่อง mp3 */
+.player {
+  width: min(320px, 100%);
+  padding: 22px 22px 26px;
+  border-radius: 36px;
+  background: var(--body);
+  border: 3px solid var(--white);
+  box-shadow:
+    0 0 0 3px var(--body-edge),
+    0 18px 0 -6px var(--body-edge),
+    0 30px 40px -10px rgba(214, 100, 140, .35);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 22px;
+}
+
+/* จอ */
+.screen {
+  width: 100%;
+  padding: 14px 16px 16px;
+  border-radius: 18px;
+  background: var(--screen);
+  box-shadow: inset 0 3px 8px rgba(214, 100, 140, .25);
+  text-align: center;
+}
+
+.screen-top {
+  display: flex;
+  justify-content: space-between;
+  font-size: .8rem;
+  opacity: .75;
+}
+
+.track {
+  margin-top: 6px;
+  font-weight: 600;
+  font-size: 1.15rem;
+}
+
+.time {
+  font-family: "VT323", ui-monospace, monospace;
+  font-size: 5rem;
+  line-height: 1;
+  letter-spacing: .04em;
+  margin: 4px 0 10px;
+}
+
+.progress {
+  height: 8px;
+  border-radius: 99px;
+  background: #ffdce7;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  width: 0%;
+  background: var(--accent);
+  border-radius: 99px;
+  transition: width .4s linear;
+}
+
+/* ปุ่ม */
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.btn {
+  border: 3px solid var(--white);
+  border-radius: 50%;
+  background: var(--screen);
+  color: var(--ink);
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 5px 0 var(--body-edge);
+  transition: transform .08s, box-shadow .08s;
+}
+
+.btn:active {
+  transform: translateY(4px);
+  box-shadow: 0 1px 0 var(--body-edge);
+}
+
+.btn.side { width: 56px; height: 56px; font-size: 1.2rem; }
+
+.btn.main {
+  width: 84px;
+  height: 84px;
+  font-size: 2rem;
+  background: var(--accent);
+  color: var(--white);
+}
+
+.reset {
+  border: 0;
+  background: transparent;
+  color: var(--ink);
+  font: inherit;
+  font-size: .9rem;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  cursor: pointer;
+}
+
+.btn:focus-visible,
+.reset:focus-visible {
+  outline: 3px solid var(--ink);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .progress-bar, .btn { transition: none; }
+}
