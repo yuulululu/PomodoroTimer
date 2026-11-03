@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en_US">
+<head>
+    <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>My Pomodoro Timer</title>
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Mali:wght@400;600&family=VT323&display=swap" rel="stylesheet">
+     <link rel="stylesheet" href="css/style.css">
+   </head>
+   <body>
+
+     <main class="stage">
+       <section class="player" aria-label="เครื่องเล่น Pomodoro">
+
+         <div class="screen">
+           <div class="screen-top">
+             <span id="trackNo">01/03</span>
+             <span id="status">หยุดอยู่</span>
+           </div>
+           <div class="track" id="trackName">โฟกัส</div>
+           <div class="time" id="time" role="timer" aria-live="off">25:00</div>
+           <div class="progress"><div class="progress-bar" id="bar"></div></div>
+         </div>
+
+         <div class="controls">
+           <button class="btn side" id="prevBtn" aria-label="โหมดก่อนหน้า">⏮</button>
+           <button class="btn main" id="playBtn" aria-label="เริ่ม">▶</button>
+           <button class="btn side" id="nextBtn" aria-label="โหมดถัดไป">⏭</button>
+         </div>
+
+         <button class="reset" id="resetBtn">รีเซ็ตเวลา</button>
+
+       </section>
+     </main>
+
+     <script src="js/app.js"></script>
+   </body>
+   </html>
