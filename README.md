@@ -19,7 +19,7 @@ Pomodoro timer สีชมพูพาสเทล หน้าตาเหม�
 2. เปิดไฟล์ `index.html` ในเบราว์เซอร์ได้เลย
 
 ```bash
-git clone <ลิงก์ repo ของคุณ>
+git clone https://github.com/yuulululu/PomodoroTimer.git
 cd pomodoro-timer
 ```
 ## วิธีใช้งาน 2
